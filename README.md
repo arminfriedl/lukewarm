@@ -1,9 +1,8 @@
 [![Build Status](https://drone.friedl.net/api/badges/container/lukewarm/status.svg)](https://drone.friedl.net/container/lukewarm)
 
 # Lukewarm and the Cool
-One chilly day,
-[Cool](https://en.wikipedia.org/wiki/Cool_(programming_language)) was compiling
-another
+One chilly day [Cool](https://en.wikipedia.org/wiki/Cool_(programming_language))
+was busy compiling yet another
 [fact](https://en.wikipedia.org/wiki/Cool_(programming_language)#Examples), when
 suddenly it became very sad. It was about its buddy
 [Bodhi](https://www.bodhilinux.com/). Bodhi 1.4.0 (!!) was ancient and tired.

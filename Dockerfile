@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y flex bison build-essential \
+RUN apt-get install -y flex-old bison build-essential \
     csh libxaw7-dev wget \
     libc6-i386 default-jdk
 
