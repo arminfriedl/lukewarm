@@ -1,12 +1,13 @@
 [![Build Status](https://drone.friedl.net/api/badges/container/lukewarm/status.svg)](https://drone.friedl.net/container/lukewarm)
 
 # Lukewarm and the Cool
-One day [Cool](https://en.wikipedia.org/wiki/Cool_(programming_language))
-compiled another
-[`fact`](https://en.wikipedia.org/wiki/Cool_(programming_language)#Examples) and
-suddenly got very sad. It was about its buddy
+One chilly day,
+[Cool](https://en.wikipedia.org/wiki/Cool_(programming_language)) was compiling
+another
+`fact`(https://en.wikipedia.org/wiki/Cool_(programming_language)#Examples), when
+suddenly it became very sad. It was about its buddy
 [Bodhi](https://www.bodhilinux.com/). Bodhi 1.4.0 (!!) was ancient and tired.
-Its mirrors broke a long time ago an it just wanted to retire.
+Its mirrors broke a long time ago and it just wanted to retire.
 
 Cool on the other hand was still full of verve and vim, so it went looking for a
 new companion. Soon enough Lukewarm entered its life. Lukewarm was a slick,
