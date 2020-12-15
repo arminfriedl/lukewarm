@@ -8,7 +8,7 @@ suddenly got very sad. It was about its buddy
 [Bodhi](https://www.bodhilinux.com/). Bodhi 1.4.0 (!!) was ancient and tired.
 Its mirrors broke a long time ago an it just wanted to retire.
 
-Cool on the other hand was still full of verve and vim. So it went looking for a
+Cool on the other hand was still full of verve and vim, so it went looking for a
 new companion. Soon enough Lukewarm entered its life. Lukewarm was a slick,
 quick-witted, up-to-date container and they immediately got along well.
 
@@ -37,10 +37,54 @@ several improvements over the provided [Bhodi](https://www.bodhilinux.com/) VM:
 - Use it with CI/CD
 - It's based on an up-to-date debian image so you can `apt-get` what you need
 
-# Usage
+# Where to get it
+Lukewarm is published as a container image on
+[https://hub.docker.com/](https://hub.docker.com/repository/docker/arminfriedl/lukewarm).
+You can simply run it by:
 
 ```shell
 docker run -it -v $PWD:/class arminfriedl/lukewarm
 ```
 
-At first start this will set up all assignments in `$PWD`.
+If you are using SELinux you may need to relabel the host folder so it is
+accessible from the container:
+
+```shell
+docker run -it -v $PWD:/class:Z arminfriedl/lukewarm
+```
+
+You can find the repository the container image is built from on
+https://git.friedl.net/container/lukewarm. [Drone](https://www.drone.io/) does
+the heavy lifting and the build history can be found at
+https://drone.friedl.net/container/lukewarm.
+
+# How to use it
+At first start this will set up all assignments in `/class` from the [course
+distribution
+tar](https://courses.edx.org/asset-v1:StanfordOnline+SOE.YCSCS1+1T2020+type@asset+block@student-dist.tar.gz).
+If you mounted a host folder to `/class` you can modify the assignments on your
+local machine and build them in the container.
+
+The directory structure looks like this:
+
+```
+.
+├── assignments
+│   ├── ...
+│   ├── PA3
+│   ├── PA3J
+│   ├── ...
+├── bin
+├── etc
+├── examples
+├── handouts
+├── include
+├── lib
+└── src
+```
+
+Edit your assignments in the `./assignments/PA[0-9]J?` folder depending on
+whether you want to work on the C++ or the Java version. Each `PA[0-9]J?` folder
+contains a `grade.pl` script. For grading and retrieving your submission code
+just execute `perl grade.pl` in the current assignment folder from within the
+Lukewarm container.
