@@ -4,7 +4,7 @@
 One chilly day,
 [Cool](https://en.wikipedia.org/wiki/Cool_(programming_language)) was compiling
 another
-`fact`(https://en.wikipedia.org/wiki/Cool_(programming_language)#Examples), when
+[fact](https://en.wikipedia.org/wiki/Cool_(programming_language)#Examples), when
 suddenly it became very sad. It was about its buddy
 [Bodhi](https://www.bodhilinux.com/). Bodhi 1.4.0 (!!) was ancient and tired.
 Its mirrors broke a long time ago and it just wanted to retire.
@@ -37,6 +37,7 @@ several improvements over the provided [Bhodi](https://www.bodhilinux.com/) VM:
 - Predictable and lightweight
 - Use it with CI/CD
 - It's based on an up-to-date debian image so you can `apt-get` what you need
+- Tested with [podman](https://podman.io/) too
 
 # Where to get it
 Lukewarm is published as a container image on
@@ -45,6 +46,8 @@ You can simply run it by:
 
 ```shell
 docker run -it -v $PWD:/class arminfriedl/lukewarm
+#   or
+podman run -it -v $PWD:/class arminfriedl/lukewarm
 ```
 
 If you are using SELinux you may need to relabel the host folder so it is
@@ -52,6 +55,8 @@ accessible from the container:
 
 ```shell
 docker run -it -v $PWD:/class:Z arminfriedl/lukewarm
+#   or
+podman run -it -v $PWD:/class arminfriedl/lukewarm
 ```
 
 You can find the repository the container image is built from on
