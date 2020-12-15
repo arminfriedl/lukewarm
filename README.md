@@ -88,3 +88,18 @@ whether you want to work on the C++ or the Java version. Each `PA[0-9]J?` folder
 contains a `grade.pl` script. For grading and retrieving your submission code
 just execute `perl grade.pl` in the current assignment folder from within the
 Lukewarm container.
+
+# Contribute
+If you want to contribute to Lukewarm feel free to send patches to
+dev[at]friedl[dot]net. Alternatviely, you can issue a pull request on GitHub
+which will be cherry picked into my tree. If you plan significant long-term
+contributions drop me a mail for contributor access on the main tree at
+https://git.friedl.net/container/lukewarm.
+
+# Github Users
+If you are visiting this repository on GitHub, you are on a mirror of
+https://git.friedl.net/container/lukewarm. This mirror is regularily updated
+with my other GitHub mirrors.
+
+Currently I do not intend to move the main tree to GitHub. In case there is
+popular demand however this will change.
