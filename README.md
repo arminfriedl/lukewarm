@@ -1,3 +1,5 @@
+[![Build Status](https://drone.friedl.net/api/badges/container/lukewarm/status.svg)](https://drone.friedl.net/container/lukewarm)
+
 # Lukewarm and the Cool
 One day [Cool](https://en.wikipedia.org/wiki/Cool_(programming_language))
 compiled another
