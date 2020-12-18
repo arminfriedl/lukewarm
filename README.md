@@ -55,7 +55,15 @@ accessible from the container:
 ```shell
 docker run -it -v $PWD:/class:Z arminfriedl/lukewarm
 #   or
-podman run -it -v $PWD:/class arminfriedl/lukewarm
+podman run -it -v $PWD:/class:Z arminfriedl/lukewarm
+```
+
+If you want to debug with gdb you will need to enable:
+
+```shell
+docker run it -v $PWD:/class --cap-add=SYS_PTRACE --security-opt seccomp=unconfined arminfriedl/lukewarm
+#   or
+podman run -it -v $PWD:/class --cap-add=SYS_PTRACE --security-opt seccomp=unconfined arminfriedl/lukewarm
 ```
 
 You can find the repository the container image is built from on

@@ -8,7 +8,8 @@ RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y flex-old bison build-essential \
     csh libxaw7-dev wget \
-    libc6-i386 default-jdk
+    libc6-i386 default-jdk \
+    gdb
 
 # Install student dist
 
