@@ -49,6 +49,14 @@ RUN sed -i 's/-zx/-ozx/g' \
   /usr/class/assignments/PA4J/grade.pl /usr/class/assignments/PA4/grade.pl \
   /usr/class/assignments/PA5J/grade.pl /usr/class/assignments/PA5/grade.pl
 
+# Patch cool.flex in submission folder
+# This is a hack to
+#   a) satisfy the cool compiler which expects yylex to be named cool_yylex
+#   b) satisfy libfl > 2.5.39 which expects a yylex symbol
+#   c) fix mangling errors of yylex when compiled with a c++ compiler
+#   d) be as non-invasive as possible to the existing assignment code
+RUN patch -u /usr/class/assignments/PA2/cool.flex -i cool.flex.patch
+
 # Setup working directory
 RUN mkdir -p /class
 WORKDIR /class

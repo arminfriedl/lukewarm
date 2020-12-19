@@ -1,0 +1,20 @@
+--- cool.flex	2011-06-18 03:22:02.000000000 +0000
++++ cool.flex.work	2020-12-19 22:43:35.902153646 +0000
+@@ -12,6 +12,17 @@
+ #include <stringtab.h>
+ #include <utilities.h>
+ 
++/* This is a hack to
++ * a) satisfy the cool compiler which expects yylex to be named cool_yylex (see below)
++ * b) satisfy libfl > 2.5.39 which expects a yylex symbol
++ * c) fix mangling errors of yylex when compiled with a c++ compiler
++ * d) be as non-invasive as possible to the existing assignment code
++ */
++extern int cool_yylex();
++extern "C" {
++  int (&yylex) (void) = cool_yylex;
++}
++
+ /* The compiler assumes these identifiers. */
+ #define yylval cool_yylval
+ #define yylex  cool_yylex
