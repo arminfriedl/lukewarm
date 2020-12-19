@@ -11,6 +11,9 @@ RUN apt-get install -y flex-old bison build-essential \
     libc6-i386 default-jdk \
     gdb
 
+RUN mkdir -p /tmp/build
+COPY . /tmp/build
+
 # Install student dist
 
 # Note that this is _not_ what is in the `/usr/class/cs143` subdirectory in the
@@ -55,7 +58,7 @@ RUN sed -i 's/-zx/-ozx/g' \
 #   b) satisfy libfl > 2.5.39 which expects a yylex symbol
 #   c) fix mangling errors of yylex when compiled with a c++ compiler
 #   d) be as non-invasive as possible to the existing assignment code
-RUN patch -u /usr/class/assignments/PA2/cool.flex -i cool.flex.patch
+RUN patch -u /usr/class/assignments/PA2/cool.flex -i /tmp/build/cool.flex.patch
 
 # Setup working directory
 RUN mkdir -p /class
