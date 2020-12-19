@@ -38,6 +38,17 @@ RUN wget -O - https://courses.edx.org/asset-v1:StanfordOnline+SOE.YCSCS1+1T2020+
 RUN wget -O - https://courses.edx.org/asset-v1:StanfordOnline+SOE.YCSCS1+1T2020+type@asset+block@pa4-grading.pl \
   | tee /usr/class/assignments/PA5J/grade.pl /usr/class/assignments/PA5/grade.pl > /dev/null
 
+# Patch tar arguments in submission scripts
+# We add -o to tar command since --preserve-permissions and --same-owner
+# are default in tar for superuser. Since we are running as root
+# in the container this messes up ownership of the `grading` folders
+# created by the `grade.pl` scripts
+RUN sed -i 's/-zx/-ozx/g' \
+  /usr/class/assignments/PA2J/grade.pl /usr/class/assignments/PA2/grade.pl \
+  /usr/class/assignments/PA3J/grade.pl /usr/class/assignments/PA3/grade.pl \
+  /usr/class/assignments/PA4J/grade.pl /usr/class/assignments/PA4/grade.pl \
+  /usr/class/assignments/PA5J/grade.pl /usr/class/assignments/PA5/grade.pl
+
 # Setup working directory
 RUN mkdir -p /class
 WORKDIR /class
