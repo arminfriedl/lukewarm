@@ -1,0 +1,26 @@
+--- cool.y	2020-12-22 01:57:18.912461835 +0000
++++ cool.y.work	2020-12-22 01:57:06.089590582 +0000
+@@ -11,6 +11,23 @@
+   
+   extern char *curr_filename;
+   
++  /* This is a hack to
++   * a) satisfy the cool compiler which expects yylex to be named cool_yylex (see below)
++   * b) satisfy libfl > 2.5.39 which expects a yylex symbol
++   * c) fix mangling errors of yylex when compiled with a c++ compiler
++   * d) be as non-invasive as possible to the existing assignment code
++   *
++   * WARNING: We are now leaving standard country, but `push_macro` is supported
++   *          in all major compilers.
++   */
++  #pragma push_macro("yylex")
++  #undef yylex
++  int cool_yylex();
++  extern "C" {
++    int (&yylex) (void) = cool_yylex;
++  }
++  #pragma pop_macro("yylex")
++
+   
+   /* Locations */
+   #define YYLTYPE int              /* the type of locations */
