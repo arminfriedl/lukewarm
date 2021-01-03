@@ -64,7 +64,7 @@ RUN mkdir -p /usr/class/handouts/cs143 \
 # see also: http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
 RUN mkdir -p /usr/class/handouts/openclassroom \
   && cd /usr/class/handouts/openclassroom \
-  && wget -np -m http://openclassroom.stanford.edu/MainFolder/courses/Compilers/docs \
+  && wget -np -m http://openclassroom.stanford.edu/MainFolder/courses/Compilers/docs/ \
   && mv openclassroom.stanford.edu/MainFolder/courses/Compilers/docs/* . && rm -fR openclassroom.stanford.edu
 
 # Patch tar arguments in submission scripts
