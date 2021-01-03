@@ -85,7 +85,8 @@ RUN sed -i 's/-zx/-ozx/g' \
 #   c) fix mangling errors of yylex when compiled with a c++ compiler
 #   d) be as non-invasive as possible to the existing assignment code
 RUN patch -u /usr/class/assignments/PA2/cool.flex -i /tmp/build/cool.flex.patch \
-    && patch -u /usr/class/assignments/PA3/cool.y -i /tmp/build/cool.y.patch
+    && patch -u /usr/class/assignments/PA3/cool.y -i /tmp/build/cool.y.patch \
+    && patch -u /usr/class/assignments/PA4/Makefile -i /tmp/build/Makefile.patch
 
 # Setup working directory
 RUN mkdir -p /class

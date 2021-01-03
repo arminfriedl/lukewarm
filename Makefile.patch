@@ -1,0 +1,11 @@
+--- Makefile	2021-01-03 12:11:07.454989428 +0000
++++ Makefile.work	2021-01-03 12:15:19.965132466 +0000
+@@ -2,7 +2,7 @@
+ ASSN = 4
+ CLASS= cs143
+ CLASSDIR= ../..
+-LIB= -L/usr/pubsw/lib -lfl 
++LIB= -L/usr/pubsw/lib
+ AR= gar
+ ARCHIVE_NEW= -cr
+ RANLIB= gar -qs
